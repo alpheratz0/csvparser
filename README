@@ -1,0 +1,10 @@
+csvparser is a c# library to parse .csv files.
+I wrote this project back in 2019 and stills untouched since then,
+I dont recommend the usage of this library, I did it just for fun.
+
+In order to build this library you need to run `dotnet build`.
+
+This program is free software; you can redistribute it
+and/or modify it under the terms of the GNU General Public License
+version 2 as published by the Free Software Foundation.
+See COPYING for more details.
