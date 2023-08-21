@@ -2,23 +2,31 @@ using System;
 using CSVParser;
 
 [CSVStructLayout(CSVLayoutKind.Explicit)]
-struct Person 
+struct Person
 {
-    [CSVFieldHead("id")] public int ID { get; set; }
-    [CSVFieldHead("name")] public string Name { get; set; }
-    [CSVFieldHead("lastname")] public string Lastname { get; set; }
+	[CSVBindColumnName("id")]
+	public int ID { get; set; }
 
-    public override string ToString() => $"{ID} | {Name} | {Lastname}";
+	[CSVBindColumnName("name")]
+	public string Name { get; set; }
+
+	[CSVBindColumnName("lastname")]
+	public string Lastname { get; set; }
+
+	public override string ToString()
+	{
+		return $"{Lastname}, {Name}";
+	}
 }
-        
+
 public class Program
 {
-	static void Main(string[] args) 
+	static void Main(string[] args)
 	{
-		using (CSVReader reader = new CSVReader("./Data.csv", true)) 
+		using (CSVReader reader = new CSVReader("./Data.csv", true))
 		{
 			while (reader.TryRead<Person>(out Person person))
-				Console.WriteLine(person.ToString());
+				Console.WriteLine(person);
 		}
 	}
 }
