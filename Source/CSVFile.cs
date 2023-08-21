@@ -165,7 +165,7 @@ namespace CSVParser
 		public void Save(string path)
 		{
 			string[] rows = m_records.Select(record => record.ToString()).ToArray();
-			File.WriteAllText(path, string.Join("\r\n", rows));
+			File.WriteAllText(path, string.Join("\n", rows));
 		}
 
 		bool ICollection<CSVRecord>.IsReadOnly => false;
