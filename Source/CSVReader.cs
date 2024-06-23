@@ -82,6 +82,7 @@ namespace CSVParser
 				m_stream = File.OpenText(m_path);
 			}
 
+			// FIXME: ...
 			position = m_hasHead ? position + 1 : position;
 
 			while (position > m_position)
